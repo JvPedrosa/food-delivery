@@ -73,7 +73,7 @@ header {
 .shoppingCart .cart_content {
   width: 20px;
   height: 20px;
-  background-color: #0000ff;
+  background-color: #0057b8;
   border-radius: 100%;
   min-width: 20px;
   min-height: 20px;
@@ -176,6 +176,11 @@ header {
 .bottomMenu ul li a .icon .MuiSvgIcon-root {
   font-size: 26px;
   color: #373848;
+  transition: 0.5s;
+}
+
+.bottomMenu ul li a .icon .MuiSvgIcon-root:hover {
+  color: #0057b8;
 }
 
 .bottomMenu ul li.active a .icon {
@@ -191,7 +196,7 @@ header {
   position: absolute;
   height: 60px;
   width: 60px;
-  background-color: #0000ff;
+  background-color: #0057b8;
   border-radius: 100vw;
   top: -50%;
   border: 6px solid #faf9fb;
@@ -297,4 +302,239 @@ main {
   font-weight: 500px;
   width: 200px;
   margin: 5px 0;
+}
+
+.restaurantContainer {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.menuCard {
+  width: 100%;
+}
+
+.subMenuContainer, .viewAll {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subMenuContainer h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2a2b3c;
+}
+
+.subMenuContainer .viewAll p {
+  font-size: 12px;
+  color: #0057b8;
+}
+
+.subMenuContainer .viewAll i {
+  background-color: #0057b8;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.subMenuContainer .viewAll i .MuiSvgIcon-root {
+  font-size: 16px;
+  color: #faf9fb;
+}
+
+.rowContainer {
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.rowContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.rowMenuCard {
+  width: 180px;
+  min-width: 180px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.rowMenuCard:hover, .rowMenuCard.active {
+  background-color: #0057b8;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.rowMenuCard .imgBox {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 100vw;
+  background-color: #faf9fb;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.rowMenuCard:hover .imgBox, .rowMenuCard.active .imgBox{
+  background-color: #fff;
+}
+
+.rowMenuCard .imgBox img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.rowMenuCard .rating .MuiSvgIcon-root {
+  font-size: 14px;
+}
+
+.rowMenuCard h3 {
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.5s;
+  text-align: center;
+  max-height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px;
+}
+
+.rowMenuCard:hover h3, .rowMenuCard.active h3 {
+  color: #faf9fb;
+}
+
+.rowMenuCard .loadMenu {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #0057b8;
+  transition: 0.5s;
+}
+
+.rowMenuCard:hover .loadMenu, .rowMenuCard.active .loadMenu {
+  background-color: #fff;
+}
+
+.rowMenuCard .loadMenu .MuiSvgIcon-root {
+  font-size: 18px;
+  color: #faf9fb;
+}
+
+.rowMenuCard:hover .loadMenu .MuiSvgIcon-root, .rowMenuCard.active .loadMenu .MuiSvgIcon-root{
+  color: #0057b8;
+}
+
+.itemContainer {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.itemCard {
+  width: 200px;
+  height: 180px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 10px 20px;
+}
+
+.itemCard .imgBox {
+  width: 100px;
+  height: 100px;
+  border-radius: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  position: absolute;
+  top: 20px;
+}
+
+.itemCard .imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.itemImg {
+  position: absolute;
+  top: 0;
+  width: 60%;
+}
+
+.itemContent {
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  padding: 10px;
+  padding-top: 50px;
+  width: 90%;
+}
+
+.itemContent .itemName {
+  font-size: 16px;
+}
+
+.itemContent .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.yellow {
+  color: #ffff00 !important;
+}
+
+.gray {
+  color: #373848 !important;
+}
+
+.itemContent .bottom .price {
+  font-size: 16px;
+}
+
+.itemContent .addtoCart {
+  background-color: #0057b8;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.itemContent .addtoCart .MuiSvgIcon-root {
+  color: #faf9fb;
+  font-size: 16px;
 }
