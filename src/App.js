@@ -1,4 +1,4 @@
-import { AccountBalanceWalletRounded, Chat, Favorite, HomeRounded, Settings, SummarizeRounded } from '@mui/icons-material';
+import { AccountBalanceWalletRounded, Chat, HomeRounded, Settings } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
 import './App.css';
 import BannerName from './components/BannerName';
@@ -8,6 +8,7 @@ import MenuContainer from './components/MenuContainer';
 import SubMenuContainer from './components/SubMenuContainer';
 import { Restaurants, Items } from './components/Data'
 import ItemCard from './components/ItemCard';
+import CartItem from './components/CartItem';
 
 function App() {
   const [isMainData, setMainData] = useState(
@@ -66,7 +67,25 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="rightMenu"></div>
+        <div className="rightMenu">
+          <div className="cartCheckOutContainer">
+            <div className="cartContainer">
+              <SubMenuContainer name={"Itens no Carrinho"} />
+              <div className="cardItems">
+                <CartItem
+
+                />
+              </div>
+            </div>
+            <div className="totalSection">
+              <h3>Total</h3>
+              <p><span>R$ 14,00</span></p>
+            </div>
+            <div className="checkout">
+              <button>Finalizar Pedido</button>
+            </div>
+          </div>
+        </div>
       </main>
 
       <div className="bottomMenu">
@@ -74,8 +93,6 @@ function App() {
           <MenuContainer link={'#'} icon={<HomeRounded />} isHome />
           <MenuContainer link={'#'} icon={<Chat />} />
           <MenuContainer link={'#'} icon={<AccountBalanceWalletRounded />} />
-          <MenuContainer link={'#'} icon={<Favorite />} />
-          <MenuContainer link={'#'} icon={<SummarizeRounded />} />
           <MenuContainer link={'#'} icon={<Settings />} />
           <div className="indicator"></div>
         </ul>
