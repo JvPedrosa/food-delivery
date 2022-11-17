@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import BannerName from './BannerName'
 import { Items, Restaurants } from '../store/Data'
 import MenuCard from './MenuCard'
-import SubMenuContainer from './SubMenuContainer'
 import ItemCard from './ItemCard';
 import RightMenu from './RightMenu';
 import { useStateValue } from "../store/StateProvider";
@@ -11,7 +10,7 @@ const HomeUsuario = () => {
   const [isMainData, setMainData] = useState(
     Items.filter((element) => element.itemId === "vascao")
   );
-  const [{ cart }, dispatch] = useStateValue()
+  const [{ }, dispatch] = useStateValue()
   useEffect(() => {
     const menuLi = document.querySelectorAll('#menu li');
     function setMenuActive() {
@@ -44,7 +43,9 @@ const HomeUsuario = () => {
         </div>
         <div className='restaurantContainer'>
           <div className="menuCard">
-            <SubMenuContainer name={"Restaurantes"} />
+            <div className="subMenuContainer">
+              <h3>Restaurantes</h3>
+            </div>
           </div>
           <div className="rowContainer">
             {Restaurants && Restaurants.map((data, index) => (

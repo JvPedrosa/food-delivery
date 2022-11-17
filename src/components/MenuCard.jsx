@@ -3,11 +3,7 @@ import { ChevronRightRounded, StarRounded } from '@mui/icons-material';
 import { useState } from 'react';
 
 const MenuCard = ({ imgSrc, name, isActive, ratings }) => {
-  const [currentValue, setCurrentValue] = useState(Math.floor(ratings))
-
-  const handleClick = (value) => {
-    setCurrentValue(value)
-  }
+  const [currentValue] = useState(Math.floor(ratings))
 
   return (
     <div className={`rowMenuCard ${isActive ? `active` : ``}`}>
@@ -18,9 +14,7 @@ const MenuCard = ({ imgSrc, name, isActive, ratings }) => {
         <h3>{name}</h3>
         <div className='ratings'>
           {Array.apply(null, { length: 5 }).map((e, i) => (
-            <i key={i} className={`rating ${currentValue > i ? "yellow" : "grey"}`}
-              onClick={() => handleClick(i + 1)}
-            >
+            <i key={i} className={`rating ${currentValue > i ? "yellow" : "grey"}`}>
               <StarRounded />
             </i>
           ))}

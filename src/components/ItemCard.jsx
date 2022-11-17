@@ -5,10 +5,11 @@ import { actionType } from '../store/reducer';
 import { useStateValue } from '../store/StateProvider';
 
 let cartData = []
+let totalPrice = 0
 
 const ItemCard = ({ imgSrc, name, price, itemId }) => {
   const [isCart, setCart] = useState(null);
-  const [{ }, dispatch] = useStateValue()
+  const [{ total }, dispatch] = useStateValue()
 
   useEffect(() => {
     if (isCart) {
@@ -19,6 +20,19 @@ const ItemCard = ({ imgSrc, name, price, itemId }) => {
       })
     }
   }, [isCart, dispatch])
+
+  useEffect(() => {
+    totalPrice = total;
+  }, [total])
+
+  const addToCart = () => {
+    setCart(Items.find(n => n.id === itemId))
+    totalPrice += price
+    dispatch({
+      type: actionType.SET_TOTAL,
+      total: totalPrice
+    })
+  }
 
   var preco = price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
   return (
@@ -32,7 +46,7 @@ const ItemCard = ({ imgSrc, name, price, itemId }) => {
           <h3 className='price'>
             {preco}
           </h3>
-          <i className="addtoCart" onClick={() => setCart(Items.find(n => n.id === itemId))}>
+          <i className="addtoCart" onClick={addToCart}>
             <AddRounded />
           </i>
         </div>

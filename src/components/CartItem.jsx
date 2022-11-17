@@ -4,31 +4,42 @@ import { useStateValue } from '../store/StateProvider';
 import { actionType } from '../store/reducer';
 
 let cartItems = []
+let totalPrice = 0
 
 const CartItem = ({ name, imgSrc, price, itemId }) => {
   const [qty, setQty] = useState(1);
-  const [{ cart }, dispatch] = useStateValue()
+  const [{ cart, total }, dispatch] = useStateValue()
   const [itemPrice, setItemPrice] = useState(parseInt(qty) * parseFloat(price))
-
 
   useEffect(() => {
     cartItems = cart;
     setItemPrice(parseInt(qty) * parseFloat(price))
-  }, [qty, cart, price, itemPrice])
+    dispatch({
+      type: actionType.SET_CART,
+      cart: cartItems,
+    });
+  }, [qty, cart, price, itemPrice, dispatch])
 
   const updateQty = (action, id) => {
+    totalPrice = total
     if (action === "add") {
       setQty(qty + 1);
+      totalPrice = totalPrice + price
     } else {
       if (qty === 1) {
         cartItems = cartItems.filter(elem => elem.id !== id)
       } else {
         setQty(qty - 1);
       }
+      totalPrice = totalPrice - price
     }
     dispatch({
       type: actionType.SET_CART,
       cart: cartItems,
+    });
+    dispatch({
+      type: actionType.SET_TOTAL,
+      total: totalPrice,
     });
   };
 
