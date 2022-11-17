@@ -21,6 +21,7 @@ const RightMenu = () => {
                   <CartItem
                     key={data.id}
                     itemId={data.id}
+                    rest={data.itemId}
                     name={data.name}
                     imgSrc={data.imgSrc}
                     price={data.price}

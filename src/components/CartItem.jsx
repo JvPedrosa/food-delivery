@@ -6,7 +6,7 @@ import { actionType } from '../store/reducer';
 let cartItems = []
 let totalPrice = 0
 
-const CartItem = ({ name, imgSrc, price, itemId }) => {
+const CartItem = ({ name, imgSrc, price, itemId, rest }) => {
   const [qty, setQty] = useState(1);
   const [{ cart, total }, dispatch] = useStateValue()
   const [itemPrice, setItemPrice] = useState(parseInt(qty) * parseFloat(price))
@@ -49,6 +49,7 @@ const CartItem = ({ name, imgSrc, price, itemId }) => {
         <img src={imgSrc} alt="" />
       </div>
       <div className="itemSection">
+        <p>{rest}</p>
         <h2 className="itemName">{name}</h2>
         <div className="itemQuantity">
           <span>x{qty}</span>
