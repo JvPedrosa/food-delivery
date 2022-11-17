@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CartItem from './CartItem'
-import { useStateValue } from './StateProvider'
+import { useStateValue } from '../store/StateProvider'
 import SubMenuContainer from './SubMenuContainer'
 
 const RightMenu = () => {
   const [{ cart }, dispatch] = useStateValue()
+  const [totalPrice, setTotalPrice] = useState(0)
+
   return (
     <div className="rightMenu">
       {!cart ? <div>
@@ -29,7 +31,7 @@ const RightMenu = () => {
           </div>
           <div className="totalSection">
             <h3>Total</h3>
-            <p><span>R$ 14,00</span></p>
+            <p><span>{totalPrice}</span></p>
           </div>
           <div className="checkout">
             <button>Finalizar Pedido</button>

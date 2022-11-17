@@ -1,17 +1,14 @@
 import { SearchRounded, ShoppingCartRounded, } from "@mui/icons-material";
 import React, { useEffect } from "react";
-import { useStateValue } from "./StateProvider";
+import { useStateValue } from "../store/StateProvider";
 import Logo from './images/logo.png'
 
 const Header = () => {
   const [{ cart }, dispatch] = useStateValue();
 
-  useEffect(() => {
-    const toggleIcon = document.querySelector(".toggleMenu");
-    toggleIcon.addEventListener("click", () => {
-      document.querySelector(".rightMenu").classList.toggle("active");
-    });
-  }, []);
+  const showCart = () => {
+    document.querySelector(".rightMenu").classList.toggle("active");
+  }
 
   return (
     <header>
@@ -34,7 +31,7 @@ const Header = () => {
         <h2 className="userName">João Victor</h2>
       </div>
 
-      <div className="toggleMenu">
+      <div className="toggleMenu" onClick={showCart}>
         <div className="shoppingCart">
           <ShoppingCartRounded className="cart" />
           <div className={`${!cart ? "noCartItem" : "cart_content"}`}>

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import BannerName from './BannerName'
-import { Items, Restaurants } from './Data'
+import { Items, Restaurants } from '../store/Data'
 import MenuCard from './MenuCard'
 import SubMenuContainer from './SubMenuContainer'
 import ItemCard from './ItemCard';
 import RightMenu from './RightMenu';
-import { useStateValue } from './StateProvider'
+import { useStateValue } from "../store/StateProvider";
 
 const HomeUsuario = () => {
   const [isMainData, setMainData] = useState(

@@ -1,8 +1,8 @@
 import { AddRounded } from '@mui/icons-material';
 import React, { useEffect, useState } from 'react'
-import { Items } from './Data';
-import { actionType } from './reducer';
-import { useStateValue } from './StateProvider';
+import { Items } from '../store/Data';
+import { actionType } from '../store/reducer';
+import { useStateValue } from '../store/StateProvider';
 
 let cartData = []
 
@@ -18,7 +18,7 @@ const ItemCard = ({ imgSrc, name, price, itemId }) => {
         cart: cartData
       })
     }
-  }, [isCart])
+  }, [isCart, dispatch])
 
   var preco = price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
   return (
