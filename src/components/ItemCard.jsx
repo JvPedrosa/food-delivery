@@ -1,7 +1,25 @@
 import { AddRounded } from '@mui/icons-material';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Items } from './Data';
+import { actionType } from './reducer';
+import { useStateValue } from './StateProvider';
+
+let cartData = []
 
 const ItemCard = ({ imgSrc, name, price, itemId }) => {
+  const [isCart, setCart] = useState(null);
+  const [{ }, dispatch] = useStateValue()
+
+  useEffect(() => {
+    if (isCart) {
+      cartData.push(isCart);
+      dispatch({
+        type: actionType.SET_CART,
+        cart: cartData
+      })
+    }
+  }, [isCart])
+
   var preco = price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
   return (
     <div className='itemCard' id={itemId}>
@@ -14,7 +32,7 @@ const ItemCard = ({ imgSrc, name, price, itemId }) => {
           <h3 className='price'>
             {preco}
           </h3>
-          <i className="addtoCart">
+          <i className="addtoCart" onClick={() => setCart(Items.find(n => n.id === itemId))}>
             <AddRounded />
           </i>
         </div>

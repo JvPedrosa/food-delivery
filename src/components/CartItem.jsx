@@ -1,7 +1,10 @@
 import { AddRounded, RemoveRounded } from '@mui/icons-material'
-import React from 'react'
+import React, { useState } from 'react'
 
-const CartItem = ({ name, imgSrc, qty, price }) => {
+const CartItem = ({ name, imgSrc, price, itemId }) => {
+  const [qty, setQty] = useState(1);
+  var preco = price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+
   return (
     <div className='cardItem'>
       <div className="imgBox">
@@ -18,8 +21,7 @@ const CartItem = ({ name, imgSrc, qty, price }) => {
         </div>
       </div>
       <p className="itemPrice">
-        <span className="realSign">R$ </span>
-        <span className="itemPriceValue">{price}</span>
+        <span className="value">{preco}</span>
       </p>
     </div>
   )

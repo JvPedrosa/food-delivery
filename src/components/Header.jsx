@@ -1,8 +1,18 @@
-import { BarChart, SearchRounded, ShoppingCartRounded } from '@mui/icons-material'
-import React from 'react'
+import { SearchRounded, ShoppingCartRounded, } from "@mui/icons-material";
+import React, { useEffect } from "react";
+import { useStateValue } from "./StateProvider";
 import Logo from './images/logo.png'
 
 const Header = () => {
+  const [{ cart }, dispatch] = useStateValue();
+
+  useEffect(() => {
+    const toggleIcon = document.querySelector(".toggleMenu");
+    toggleIcon.addEventListener("click", () => {
+      document.querySelector(".rightMenu").classList.toggle("active");
+    });
+  }, []);
+
   return (
     <header>
       <img src={Logo} alt="Logo" className='logo' />
@@ -10,13 +20,6 @@ const Header = () => {
       <div className="inputBox">
         <SearchRounded className='searchIcon' />
         <input type="text" placeholder='Pesquisar...' />
-      </div>
-
-      <div className="shoppingCart">
-        <ShoppingCartRounded className='cart' />
-        <div className="cart_content">
-          <p>2</p>
-        </div>
       </div>
 
       <div className="profileContainer">
@@ -31,8 +34,13 @@ const Header = () => {
         <h2 className="userName">João Victor</h2>
       </div>
 
-      <div className="toogleMenu">
-        <BarChart className='toogleIcon' />
+      <div className="toggleMenu">
+        <div className="shoppingCart">
+          <ShoppingCartRounded className="cart" />
+          <div className={`${!cart ? "noCartItem" : "cart_content"}`}>
+            <p>{cart ? cart.length : ""}</p>
+          </div>
+        </div>
       </div>
     </header>
   )
