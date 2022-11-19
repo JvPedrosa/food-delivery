@@ -1,7 +1,7 @@
 import { AddRounded, RemoveRounded } from '@mui/icons-material'
 import React, { useState, useEffect } from 'react'
-import { useStateValue } from '../store/StateProvider';
-import { actionType } from '../store/reducer';
+import { useStateValue } from '../../store/StateProvider';
+import { actionType } from '../../store/reducer';
 
 let cartItems = []
 let totalPrice = 0

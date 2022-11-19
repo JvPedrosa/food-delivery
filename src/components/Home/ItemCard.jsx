@@ -1,8 +1,8 @@
 import { AddRounded } from '@mui/icons-material';
 import React, { useEffect, useState } from 'react'
-import { Items } from '../store/Data';
-import { actionType } from '../store/reducer';
-import { useStateValue } from '../store/StateProvider';
+import { Items } from '../../store/Data';
+import { actionType } from '../../store/reducer';
+import { useStateValue } from '../../store/StateProvider';
 
 let cartData = []
 let totalPrice = 0

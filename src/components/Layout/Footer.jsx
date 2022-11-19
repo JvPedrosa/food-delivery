@@ -1,6 +1,6 @@
 import React from 'react'
-import MenuContainer from './MenuContainer'
 import { AccountBalanceWalletRounded, Chat, HomeRounded, Settings } from '@mui/icons-material';
+import MenuContainer from './../Home/MenuContainer';
 
 const Footer = () => {
   return (

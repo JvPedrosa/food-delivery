@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import BannerName from './BannerName'
+import BannerName from '../components/Home/BannerName'
+import ItemCard from '../components/Home/ItemCard';
 import { Items, Restaurants } from '../store/Data'
-import MenuCard from './MenuCard'
-import ItemCard from './ItemCard';
-import RightMenu from './RightMenu';
+import MenuCard from './../components/Home/MenuCard';
+import RightMenu from './../components/Home/RightMenu';
 
-const HomeUsuario = () => {
+const Home = () => {
   const [isMainData, setMainData] = useState(
     Items.filter((element) => element.itemId === "vascao")
   );
@@ -64,4 +64,4 @@ const HomeUsuario = () => {
   )
 }
 
-export default HomeUsuario
+export default Home

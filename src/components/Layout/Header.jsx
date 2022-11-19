@@ -1,10 +1,10 @@
 import { SearchRounded, ShoppingCartRounded, } from "@mui/icons-material";
-import React, { useEffect } from "react";
-import { useStateValue } from "../store/StateProvider";
-import Logo from './images/logo.png'
+import React from "react";
+import Logo from '../images/logo.png'
+import { useStateValue } from './../../store/StateProvider';
 
 const Header = () => {
-  const [{ cart }, dispatch] = useStateValue();
+  const [{ cart }] = useStateValue();
 
   const showCart = () => {
     document.querySelector(".rightMenu").classList.toggle("active");

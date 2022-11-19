@@ -1,6 +1,6 @@
 import React from 'react'
 import CartItem from './CartItem'
-import { useStateValue } from '../store/StateProvider'
+import { useStateValue } from '../../store/StateProvider'
 
 const RightMenu = () => {
   const [{ cart, total }] = useStateValue()
