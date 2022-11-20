@@ -6,10 +6,10 @@ const Footer = () => {
   return (
     <div className="bottomMenu">
       <ul id="menu">
-        <MenuContainer link={'#'} icon={<HomeRounded />} isHome />
-        <MenuContainer link={'#'} icon={<Chat />} />
-        <MenuContainer link={'#'} icon={<AccountBalanceWalletRounded />} />
-        <MenuContainer link={'#'} icon={<Settings />} />
+        <MenuContainer link={'/'} icon={<HomeRounded />} isHome />
+        <MenuContainer link={'/chat'} icon={<Chat />} />
+        <MenuContainer link={'/wallet'} icon={<AccountBalanceWalletRounded />} />
+        <MenuContainer link={'/settings'} icon={<Settings />} />
         <div className="indicator"></div>
       </ul>
     </div>
