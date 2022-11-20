@@ -219,6 +219,8 @@ header {
 main {
   width: 100%;
   height: auto;
+  display: flex;
+  padding-bottom: 100px;
 }
 
 .mainContainer {
@@ -675,6 +677,10 @@ main {
   letter-spacing: 2px;
 }
 
+.chat {
+  width: 100%;
+}
+
 .restaurante-chat {
   display: flex;
   align-items: center;
@@ -683,18 +689,28 @@ main {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
   width: 100%;
   margin: 10px 0;
+  padding: 5px 0;
 }
 
-.restaurante-chat .dados{
-  padding: 10px 20px;
+.chat .dados{
+  padding: 5px 10px;
   display: flex;
+  align-items: center;
 }
 
-.restaurante-chat .imgBox {
-  width: 80px;
-  height: 80px;
-  min-width: 80px;
-  min-height: 80px;
+.chat .dados h3 {
+  font-size: 16px;
+}
+
+.chat p {
+  font-size: 14px;
+}
+
+.chat .imgBox {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
   border-radius: 100vw;
   background-color: #faf9fb;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
@@ -706,11 +722,11 @@ main {
   margin: 0 10px;
 }
 
-.restaurante-chat .MuiSvgIcon-root {
+.chat .MuiSvgIcon-root {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 20px;
+  margin-right: 20px;
   border-radius: 100vw;
   transition: 0.5s;
   padding: 5px;
@@ -718,10 +734,90 @@ main {
   background-color: #fff;  
 }
 
-.restaurante-chat .MuiSvgIcon-root:hover {
-  
+.chat .MuiSvgIcon-root:hover {  
   color: #fff;
   background-color: #0057b8;
+}
+
+.chatpedido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  padding: 5px 0;
+}
+
+.chat .conversa {
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.conversa .container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 5px;
+  max-width: 50%;
+}
+
+.conversa .left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.conversa .right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.conversa .container p, .conversa .container span {
+  font-size: 10px;
+}
+
+.conversa .darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.conversa .container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.conversa .container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.conversa .container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.conversa .time-right {
+  float: right;
+  color: #aaa;
+}
+
+.conversa .time-left {
+  float: left;
+  color: #999;
+}
+
+.conversa .MuiInputBase-root {
+  width: 100%;
+  padding: 5px 10px;
+  background-color: #f1f1f1;
 }
 
 @media screen and (min-width: 650px){
@@ -762,9 +858,5 @@ main {
     font-size: 15px;
     margin: 12px 0;
     width: unset;
-  }
-
-  main {
-    display: flex;
   }
 } 

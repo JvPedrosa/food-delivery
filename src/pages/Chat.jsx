@@ -2,6 +2,8 @@ import React from 'react'
 import CardRestaurante from '../components/Chat/CardRestaurant'
 
 const Chat = () => {
+  localStorage.setItem("name", "Maria Coxinha");
+  localStorage.setItem("imgSrc", 'https://firebasestorage.googleapis.com/v0/b/ufood-d70f4.appspot.com/o/Images%2Frestaurants%2Fmariacoxinha.jpg?alt=media&token=a09dba86-904d-49d1-b87b-583f5cae8013')
   return (
     <div className='chat'>
       <CardRestaurante
