@@ -5,14 +5,15 @@ import Header from './components/Layout/Header';
 import { BrowserRouter } from 'react-router-dom'
 
 function App() {
+
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Header />
-        <Content />
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <div className="App">
+      <Header />
+        <BrowserRouter> 
+            <Content />    
+        </BrowserRouter>
+      <Footer />
+    </div>
   );
 }
 

@@ -239,10 +239,6 @@ header {
   transform: translateX(calc(60px * 4));
 }
 
-.bottomMenu ul li:nth-child(6).active~.indicator {
-  transform: translateX(calc(60px * 5));
-}
-
 main {
   width: 100%;
   height: auto;
@@ -701,6 +697,14 @@ main {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2px;
+}
+
+.pedido{
+  border-style: dashed;
+  border-width: 1px;
+  border-color: #0057b8;
+  margin-bottom: 5px;
+  padding: 5px;
 }
 
 @media screen and (min-width: 650px){

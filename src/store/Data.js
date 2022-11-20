@@ -318,4 +318,36 @@ const Items = [
   },
 ];
 
-export { Restaurants, Items };
+const Orders = [
+  {
+    id: 1,
+    restauranteId: "vascao",
+    concluido: true,
+    itens: {
+      5:1,
+      3:2,
+      1:3
+    }
+  },
+    
+  {
+    id: 2,
+    restauranteId: "vascao",
+    concluido: true,
+    itens: {
+      5:4,
+      2:5
+    }
+  },
+
+  {
+    id: 3,
+    restauranteId: "cantinhodopastel",
+    concluido: false,
+    itens: {
+      31:6
+    }
+  }
+];
+
+export { Restaurants, Items, Orders };

@@ -23,7 +23,7 @@ const MenuCard = ({ imgSrc, name, isActive, ratings }) => {
       <i className="loadMenu">
         <ChevronRightRounded />
       </i>
-    </div >
+    </div>
   )
 }
 
