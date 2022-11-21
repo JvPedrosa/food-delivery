@@ -744,7 +744,7 @@ main {
   align-items: center;
   justify-content: space-between;
   background-color: #fff;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   width: 100%;
   padding: 5px 0;
 }
@@ -818,6 +818,39 @@ main {
   width: 100%;
   padding: 5px 10px;
   background-color: #f1f1f1;
+}
+
+.wallet {
+  width: 100%;
+  margin: 10px 0;
+  color: #787a84;
+}
+
+.wallet > div {
+  height: 100px;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+  margin: 10px 0;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.wallet > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wallet p {
+  display: flex;
+  align-items: center;
+}
+
+.wallet img {
+  width: 20px;
 }
 
 @media screen and (min-width: 650px){
