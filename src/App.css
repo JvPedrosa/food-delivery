@@ -17,9 +17,6 @@ header {
   height: 60px;
   width: 100%;
   background: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
   z-index: 101;
   box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
 }
@@ -129,7 +126,7 @@ header {
   justify-content: center;
   width: 100%;
   height: 60px;
-  background-color: #e6e6e6;
+  background-color: #fff;
   box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
   border-radius: 25px 25px 0 0;
   z-index: 101;
@@ -191,32 +188,8 @@ header {
   background-color: #0057b8;
   border-radius: 100vw;
   top: -50%;
-  border: 6px solid #faf9fb;
+  border: 6px solid #fff;
   transition: 0.5s;
-}
-
-.indicator::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -20px;
-  width: 18px;
-  height: 18px;
-  background: transparent;
-  border-top-right-radius: 18px;
-  box-shadow: 0px -10px 0 0 #faf9fb;
-}
-
-.indicator::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -20px;
-  width: 18px;
-  height: 18px;
-  background: transparent;
-  border-top-left-radius: 18px;
-  box-shadow: 0px -10px 0 0 #faf9fb;
 }
 
 .bottomMenu ul li:nth-child(1).active~.indicator {
@@ -242,7 +215,8 @@ header {
 main {
   width: 100%;
   height: auto;
-  margin-top: 60px;
+  display: flex;
+  padding-bottom: 100px;
 }
 
 .mainContainer {
@@ -707,6 +681,182 @@ main {
   padding: 5px;
 }
 
+.chat {
+  width: 100%;
+}
+
+.restaurante-chat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  margin: 10px 0;
+  padding: 5px 0;
+}
+
+.chat .dados{
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.chat .dados h3 {
+  font-size: 16px;
+}
+
+.chat p {
+  font-size: 14px;
+}
+
+.chat .imgBox {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
+  border-radius: 100vw;
+  background-color: #faf9fb;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  overflow: hidden;
+  margin: 0 10px;
+}
+
+.chat .MuiSvgIcon-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  border-radius: 100vw;
+  transition: 0.5s;
+  padding: 5px;
+  color: #0057b8;
+  background-color: #fff;  
+}
+
+.chat .MuiSvgIcon-root:hover {  
+  color: #fff;
+  background-color: #0057b8;
+}
+
+.chatpedido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 5px 0;
+}
+
+.chat .conversa {
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.conversa .container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 5px;
+  max-width: 50%;
+}
+
+.conversa .left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.conversa .right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.conversa .container p, .conversa .container span {
+  font-size: 10px;
+}
+
+.conversa .darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.conversa .container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.conversa .container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.conversa .container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.conversa .time-right {
+  float: right;
+  color: #aaa;
+}
+
+.conversa .time-left {
+  float: left;
+  color: #999;
+}
+
+.conversa .MuiInputBase-root {
+  width: 100%;
+  padding: 5px 10px;
+  background-color: #f1f1f1;
+}
+
+.wallet {
+  width: 100%;
+  margin: 10px 0;
+  color: #787a84;
+}
+
+.wallet > div {
+  height: 100px;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+  margin: 10px 0;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.wallet > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wallet p {
+  display: flex;
+  align-items: center;
+}
+
+.wallet img {
+  width: 20px;
+}
+
 @media screen and (min-width: 650px){
   .rowContainer{
     justify-content: space-between;
@@ -745,9 +895,5 @@ main {
     font-size: 15px;
     margin: 12px 0;
     width: unset;
-  }
-
-  main {
-    display: flex;
   }
 } 
