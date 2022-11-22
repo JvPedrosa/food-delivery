@@ -1,6 +1,7 @@
 import React from 'react'
 import { Restaurants, Orders } from '../store/Data'
 import OrderCard from '../components/Orders/OrderCard'
+import { Typography } from '@mui/material'
 
 const Pedidos = () => {
   var restaurante = null
@@ -9,7 +10,7 @@ const Pedidos = () => {
     
     <main>
       <div className="mainContainer">
-        <p>Meus Pedidos</p>
+      <Typography variant='caption' align='center' display="block" sx={{ flexShrink: 0, color: 'text.secondary',  padding:'10px' }}>Meus Pedidos</Typography>
         <div className="cardItems">
           {Orders && Orders.map((data, index) => (
             restaurante = Restaurants.filter((element) => element.itemId === data.restauranteId)[0],

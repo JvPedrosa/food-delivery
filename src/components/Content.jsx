@@ -7,6 +7,7 @@ import RightMenu from './../components/Home/RightMenu'
 import Wallet from '../pages/Wallet';
 import Chat from './../pages/Chat';
 import ChatPedido from './../pages/ChatPedido';
+import Settings from './../pages/Settings';
 
 const Content = () => {
   
@@ -27,6 +28,7 @@ const Content = () => {
         <Route path='/chat' exact element={<Chat />} />
         <Route path='/chat/:id' exact element={<ChatPedido />} />
         <Route path='/wallet' exact element={<Wallet />} />
+        <Route path='/settings' exact element={<Settings />} />
       </Routes>
       <RightMenu />
     </main>

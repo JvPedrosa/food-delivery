@@ -10,10 +10,11 @@ import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#faf9fb',
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: 'center',
+  justifyText: 'center',
   color: theme.palette.text.secondary,
 }));
 
@@ -27,23 +28,23 @@ const OrderCard = ({imgRes, nameRes, idPedido, itens}) => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
+          
+          sx={{justifyContent:'center'}}
         >
         <img src={imgRes} alt={nameRes} key={idPedido} width='40px' />
-        <Typography sx={{ width: '33%', flexShrink: 0 }}>{nameRes}</Typography>
-        <Typography sx={{ width: '33%', flexShrink: 0, color: 'text.secondary' }}>Pedido nº {idPedido}</Typography>
+        <Typography align='center' sx={{ width: '33%', flexShrink: 0 }}>{nameRes}</Typography>
+        <Typography variant='caption' sx={{ width: '33%', flexShrink: 0, color: 'rgba(0, 87, 184,.8)' }}>Pedido nº {idPedido}</Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails sx={{ backgroundColor:'#faf9fb' }}>
             <Stack spacing={0} sx={{ border:'0px' }}>
                 {Object.entries(itens).map(([key, value]) => (
                     item = Items.filter((element) => element.id === Number(key))[0],
                     total += item.price*value,
-                    <Item key={key} sx={{ borderRadius:'0px', boxShadow:'0 2px 2px -2px gray' }}>
+                    <Item key={key} sx={{ borderRadius:'0px', boxShadow:'0 2px 2px -2px rgba(0, 87, 184,.8)' }}>
                         <div className='cartItem'>
-                            <div className="imgBox">
                                 <img src={item.imgSrc} width='30px' alt="" />
-                            </div>
                             <div className="itemSection">
-                                <h2 className="itemName">{item.name}</h2>
+                                <h4 className="itemName">{item.name}</h4>
                                 <div className="itemQuantity">
                                     <span>x{value}</span>
                                 </div>
