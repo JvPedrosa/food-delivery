@@ -3,20 +3,12 @@ import BannerName from '../components/Home/BannerName'
 import ItemCard from '../components/Home/ItemCard';
 import { Items, Restaurants } from '../store/Data'
 import MenuCard from './../components/Home/MenuCard';
-import RightMenu from './../components/Home/RightMenu';
 
 const Home = () => {
   const [isMainData, setMainData] = useState(
     Items.filter((element) => element.itemId === "vascao")
   );
   useEffect(() => {
-    const menuLi = document.querySelectorAll('#menu li');
-    function setMenuActive() {
-      menuLi.forEach(n => n.classList.remove('active'));
-      this.classList.add('active')
-    }
-    menuLi.forEach(n => n.addEventListener('click', setMenuActive))
-
     const menuCards = document.querySelector(".rowContainer").querySelectorAll('.rowMenuCard');
     function setMenuCardActive() {
       menuCards.forEach(n => n.classList.remove('active'))
@@ -59,7 +51,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <RightMenu />
     </main>
   )
 }

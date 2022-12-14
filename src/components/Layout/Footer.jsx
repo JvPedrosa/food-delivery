@@ -3,10 +3,12 @@ import { AccountBalanceWalletRounded, Chat, HomeRounded } from '@mui/icons-mater
 import MenuContainer from './../Home/MenuContainer';
 
 const Footer = () => {
+
   return (
     <div className="bottomMenu">
       <ul id="menu">
         <MenuContainer link={'/'} icon={<HomeRounded />} isHome />
+        <MenuContainer link={'/pedidos'} icon={<Receipt />} />
         <MenuContainer link={'/chat'} icon={<Chat />} />
         <MenuContainer link={'/wallet'} icon={<AccountBalanceWalletRounded />} />
         <div className="indicator"></div>
